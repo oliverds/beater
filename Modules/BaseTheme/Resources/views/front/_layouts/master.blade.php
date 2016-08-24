@@ -11,9 +11,9 @@
 
     <title>
         @hasSection ('title')
-            @yield('title') - App Name
+            @yield('title') - {!! config('app.name') !!}
         @else
-            App Name
+            {!! config('app.name') !!}
         @endif
     </title>
 
@@ -28,8 +28,8 @@
     @include('basetheme::front._layouts._partials.deprecatedBrowser')
     @include('basetheme::front._layouts._partials.navbar')
     @yield('subMenu')
-    @include('basetheme::front._layouts._partials.flashMessage')
     <div class="app-container">
+        @include('basetheme::front._layouts._partials.flashMessage')
         <div class="main">
             @yield('content')
         </div>
@@ -41,23 +41,23 @@
                     <ul class="list-inline text-right">
                         <li>
                             <a href="#">
-                                Link 1
+                                Link A
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                Link 2
+                                Link B
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                Link 3
+                                Link C
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-3 col-sm-pull-9">
-                    <p><span class="footer-brand"> App </span> &copy; {{ Date('Y') }} <a href="http://oliver.mx">Oliver</a></p>
+                    <p><span class="footer-brand"> {!! config('app.name') !!} </span> &copy; {{ Date('Y') }} <a href="http://oliver.mx">Oliver</a></p>
                 </div>
             </div>
         </div>

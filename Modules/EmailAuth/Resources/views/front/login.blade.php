@@ -37,7 +37,7 @@
                                 <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary btn-uppercase">
                                         <i class="fa fa-btn fa-sign-in"></i> 
-                                        Login
+                                        Email me a link to sign in
                                     </button>
                                 </div>
                             </div>

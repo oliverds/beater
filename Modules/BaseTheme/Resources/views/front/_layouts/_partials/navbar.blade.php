@@ -12,15 +12,15 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                App
+                {!! config('app.name') !!}
             </a>
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li class="text-sm text-uppercase"><a href="#">Link 1</a></li>
-                <li class="text-sm text-uppercase active"><a href="#">Link 2</a></li>
+                <li class="text-sm text-uppercase"><a href="#">Link A</a></li>
+                <li class="text-sm text-uppercase active"><a href="#">Link B</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -43,13 +43,13 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="{{ route('logout') }}"
+                                <a href="{{ route('logout.post') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
 
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout.post') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>

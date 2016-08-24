@@ -5882,6 +5882,12 @@ button.close {
     margin-top: 0;
     margin-bottom: 0; }
 
+.text-thin {
+  font-weight: 300; }
+
+.text-thinner {
+  font-weight: 100; }
+
 .app-container {
   position: relative; }
   .app-container:after {

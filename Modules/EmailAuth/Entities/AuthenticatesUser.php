@@ -3,6 +3,7 @@
 namespace Modules\EmailAuth\Entities;
 
 use Illuminate\Http\Request;
+use Modules\User\Entities\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 

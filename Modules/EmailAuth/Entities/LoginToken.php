@@ -2,8 +2,9 @@
 
 namespace Modules\EmailAuth\Entities;
 
-use Illuminate\Support\Facades\Mail;
+use Modules\User\Entities\User;
 use Illuminate\Database\Eloquent\Model;
+use Modules\EmailAuth\Notifications\SendLoginToken;
 
 class LoginToken extends Model
 {
@@ -24,15 +25,7 @@ class LoginToken extends Model
 
     public function send()
     {
-        $url = url('/auth/token', $this->token);
-
-        Mail::raw(
-            "<a href='{$url}'>{$url}</a>",
-            function ($message) {
-                $message->to($this->user->email)
-                        ->subject('Login to Laracasts');
-            }
-        );
+        $this->user->notify(new SendLoginToken($this->token));
     }
 
     public function user()
