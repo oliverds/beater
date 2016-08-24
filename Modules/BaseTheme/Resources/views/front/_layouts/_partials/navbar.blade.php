@@ -42,11 +42,13 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog fa-fw"></i> Settings</a></li>
+                            <li role="separator" class="divider"></li>
                             <li>
                                 <a href="{{ route('logout.post') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                    Logout
+                                    <i class="fa fa-power-off fa-fw"></i> Logout
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout.post') }}" method="POST" style="display: none;">

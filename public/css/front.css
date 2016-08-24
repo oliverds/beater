@@ -4503,7 +4503,7 @@ a.thumbnail.active {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #fff;
-  border: 1px solid #e6e6e6; }
+  border: 1px solid rgba(0, 0, 0, 0.05); }
   .list-group-item:first-child {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px; }
@@ -4514,7 +4514,7 @@ a.thumbnail.active {
 
 a.list-group-item,
 button.list-group-item {
-  color: #555; }
+  color: #818181; }
   a.list-group-item .list-group-item-heading,
   button.list-group-item .list-group-item-heading {
     color: #333; }
@@ -4522,8 +4522,8 @@ button.list-group-item {
   button.list-group-item:hover,
   button.list-group-item:focus {
     text-decoration: none;
-    color: #555;
-    background-color: #f5f5f5; }
+    color: #2c2c2c;
+    background-color: #fff; }
 
 button.list-group-item {
   width: 100%;
@@ -4540,9 +4540,9 @@ button.list-group-item {
 
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
-  color: #fff;
-  background-color: #0075D6;
-  border-color: #0075D6; }
+  color: #2c2c2c;
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.05); }
   .list-group-item.active .list-group-item-heading,
   .list-group-item.active .list-group-item-heading > small,
   .list-group-item.active .list-group-item-heading > .small, .list-group-item.active:hover .list-group-item-heading,
@@ -4552,7 +4552,7 @@ button.list-group-item {
   .list-group-item.active:focus .list-group-item-heading > .small {
     color: inherit; }
   .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-    color: #a3d5ff; }
+    color: white; }
 
 .list-group-item-success {
   color: #3c763d;
@@ -5821,6 +5821,9 @@ button.close {
 
 .form-control {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0, 0, 0, 0.01); }
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  font-weight: 500; }
 
 .navbar-default, .navbar-inverse {
   margin-bottom: 0; }

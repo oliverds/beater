@@ -7,7 +7,6 @@ $app-bg: #fafafa;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
 $navbar-default-border: $laravel-border-color;
 $panel-default-border: $laravel-border-color;
 $panel-inner-border: $laravel-border-color;
@@ -61,3 +60,13 @@ $panel-footer-bg:             transparent;
 $panel-default-border:        rgba(0, 0, 0, 0.05);
 $panel-default-heading-bg:    lighten($app-bg, 0.75%);
 $panel-default-text:          $gray-darker;
+
+// List group
+
+$list-group-border:             rgba(0, 0, 0, 0.05);
+$list-group-hover-bg:           #fff;
+$list-group-active-color:       $gray-darker;
+$list-group-active-bg:          $list-group-hover-bg;
+$list-group-active-border:      $list-group-border;
+$list-group-link-color:         $gray-light;
+$list-group-link-hover-color:   $gray-darker;
