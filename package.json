@@ -1,5 +1,15 @@
 {
+  "name": "Beater",
+  "version": "0.1",
   "private": true,
+  "authors": [
+    "Oliver <oliver@open-classifieds.com>"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:oliverds/beater.git"
+  },
   "scripts": {
     "prod": "gulp --production",
     "dev": "gulp watch"
