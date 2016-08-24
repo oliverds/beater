@@ -1,0 +1,21 @@
+{
+    "name": "BaseTheme",
+    "alias": "basetheme",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\BaseTheme\\Providers\\BaseThemeServiceProvider",
+        "Laracasts\\Flash\\FlashServiceProvider",
+        "Spatie\\GoogleTagManager\\GoogleTagManagerServiceProvider",
+        "Creativeorange\\Gravatar\\GravatarServiceProvider"
+    ],
+    "aliases": {
+        "GoogleTagManager": "Spatie\\GoogleTagManager\\GoogleTagManagerFacade",
+        "Gravatar": "Creativeorange\\Gravatar\\Facades\\Gravatar"
+    },
+    "files": [
+        "start.php"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "oliverds/laravel-module-auth",
+	"description": "",
+	"authors": [
+		{
+			"name": "Oliver",
+			"email": "oliverds@users.noreply.github.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Modules\\BaseTheme\\": ""
+		}
+	},
+	"require": {
+        "spatie/laravel-googletagmanager": "^2.2",
+        "laracasts/flash": "^2.0",
+        "creativeorange/gravatar": "~1.0"
+	}
+}

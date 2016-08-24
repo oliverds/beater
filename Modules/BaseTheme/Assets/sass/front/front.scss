@@ -1,0 +1,85 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Mixins
+@import "_mixins/buttons";
+
+// Partials
+@import "_partials/buttons";
+@import "_partials/forms";
+@import "_partials/navbar";
+@import "_partials/panels";
+@import "_partials/type";
+
+.app-container {
+    position: relative;
+    &:after {
+        content: '';
+        width: 100%;
+        height: 600px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background: $app-bg;
+        box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+    .main {
+        min-height: calc(100vh - 122px);
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+}
+
+.app-footer {
+    width: 100%;
+    background: #FFFFFF;
+    border-top: 1px solid rgba(0, 0, 0, 0.13);
+    font-size: $font-size-small;
+    color: $gray-dark;
+    > .container {
+        padding-top: 22px;
+        padding-bottom: 11px;
+        min-height: 60px;
+    }
+    a {
+        color: $gray-dark;
+        &:hover,
+        &:focus {
+            color: $gray-darker;
+            text-decoration: none;
+        }
+    }
+    .list-inline {
+        > li {
+            padding-left: 15px;
+            padding-right: 15px;
+            // Active state
+            &.active > a {
+                &,
+                &:hover,
+                &:focus {
+                    font-weight: 500;
+                    color: $gray-darker;
+                }
+            }
+        }
+    }
+    .footer-brand {
+        font-size: $font-size-large;
+        font-family: 'Pacifico', cursive;
+        display: inline-block;
+        margin-bottom: -8px;
+        margin-top: -8px;
+        margin-right: 5px;
+    }
+}

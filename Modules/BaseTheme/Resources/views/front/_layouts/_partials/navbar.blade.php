@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Branding Image -->
+            <a class="navbar-brand" href="{{ url('/') }}">
+                App
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav navbar-nav">
+                <li class="text-sm text-uppercase"><a href="#">Link 1</a></li>
+                <li class="text-sm text-uppercase active"><a href="#">Link 2</a></li>
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <!-- Authentication Links -->
+            @if (Auth::guest())
+                <a href="{{ route('register') }}" class="btn btn-primary-outline navbar-btn navbar-right">
+                    <span class="text-bold">Register</span>
+                </a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                </ul>
+            @else
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown text-sm">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="text-bold">{{ Auth::user()->name }}</span> &nbsp;
+                            <img class="img-circle img-profile" src="{{ Gravatar::get(Auth::user()->email, ['size' => 30]) }}"> 
+                            <i class="fa fa-fw fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            @endif
+        </div>
+    </div>
+</nav>

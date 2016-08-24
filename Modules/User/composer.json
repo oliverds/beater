@@ -1,0 +1,15 @@
+{
+	"name": "oliverds/laravel-module-auth",
+	"description": "",
+	"authors": [
+		{
+			"name": "Oliver",
+			"email": "oliverds@users.noreply.github.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Modules\\User\\": ""
+		}
+	}
+}

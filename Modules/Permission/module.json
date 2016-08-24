@@ -1,0 +1,16 @@
+{
+    "name": "Permission",
+    "alias": "permission",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Permission\\Providers\\PermissionServiceProvider",
+        "Spatie\\Permission\\PermissionServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

@@ -1,0 +1,22 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.fa-btn {
+    margin-right: 5px;
+}
+
+.btn.btn-uppercase {
+  font-size: $font-size-small;
+  font-weight: 500;
+  line-height: floor(($font-size-base * $line-height-base));
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-primary-outline {
+  @include button-outline-variant($btn-primary-border, transparent);
+}

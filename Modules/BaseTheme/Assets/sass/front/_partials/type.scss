@@ -1,0 +1,17 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Page header
+// -------------------------
+
+.page-header {
+  padding-bottom: (($line-height-computed / 2) - 1);
+  margin: 0 0 $line-height-computed;
+  border-bottom: none;
+  > h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

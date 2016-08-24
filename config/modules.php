@@ -138,10 +138,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'oliverds',
         'author' => [
-            'name' => 'Nicolas Widart',
-            'email' => 'n.widart@gmail.com',
+            'name' => 'Oliver',
+            'email' => 'oliverds@users.noreply.github.com',
         ],
     ],
     /*
