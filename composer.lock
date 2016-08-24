@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dd9613eca8ca75ada5d712f8df64e753",
-    "content-hash": "621a6e59db27db0980008580c1b84d7c",
+    "hash": "1e59de3ee48ea229fe25d21438126fb5",
+    "content-hash": "455fc67b05d1e91061b8ac4a3d88db39",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -395,16 +395,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7d116dc5a008e69c97f864af79ac46ab6a8d5895"
+                "reference": "1268b6249358a11d430f8b97ff820afdf099f103"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7d116dc5a008e69c97f864af79ac46ab6a8d5895",
-                "reference": "7d116dc5a008e69c97f864af79ac46ab6a8d5895",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1268b6249358a11d430f8b97ff820afdf099f103",
+                "reference": "1268b6249358a11d430f8b97ff820afdf099f103",
                 "shasum": ""
             },
             "require": {
@@ -518,7 +518,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-23 13:04:04"
+            "time": "2016-08-24 09:54:18"
         },
         {
             "name": "laravelcollective/html",
@@ -884,16 +884,16 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "0.10",
+            "version": "0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "aa306a0fbd2ed69fe1ace689dd18689cfb827d1e"
+                "reference": "2c7b487b5610968f85161b9fb0ef39e7de02961a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/aa306a0fbd2ed69fe1ace689dd18689cfb827d1e",
-                "reference": "aa306a0fbd2ed69fe1ace689dd18689cfb827d1e",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/2c7b487b5610968f85161b9fb0ef39e7de02961a",
+                "reference": "2c7b487b5610968f85161b9fb0ef39e7de02961a",
                 "shasum": ""
             },
             "require": {
@@ -906,9 +906,7 @@
                 "mockery/mockery": "~0.9",
                 "orchestra/testbench": "^3.1|^3.2|3.3.x@dev",
                 "phpro/grumphp": "^0.9.1",
-                "phpunit/phpcov": "2.*",
-                "phpunit/phpunit": "~4",
-                "satooshi/php-coveralls": "~1.0"
+                "phpunit/phpunit": "~4"
             },
             "type": "library",
             "autoload": {
@@ -936,7 +934,7 @@
                 "nwidart",
                 "rad"
             ],
-            "time": "2016-08-10 19:46:10"
+            "time": "2016-08-24 09:17:50"
         },
         {
             "name": "paragonie/random_compat",
