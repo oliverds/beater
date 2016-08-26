@@ -44,6 +44,9 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog fa-fw"></i> Settings</a></li>
                             <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Control Panel</li>
+                                <li><a href="#"><i class="fa fa-tachometer fa-fw"></i> Dashboard</a></li>
+                            <li role="separator" class="divider"></li>
                             <li>
                                 <a href="{{ route('logout.post') }}"
                                     onclick="event.preventDefault();

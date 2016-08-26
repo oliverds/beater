@@ -1,9 +1,198 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css);
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Mixins
+@import "_mixins/buttons";
+
+// Partials
+@import "_partials/buttons";
+@import "_partials/forms";
+@import "_partials/list-group";
+@import "_partials/navbar";
+@import "_partials/panels";
+@import "_partials/type";
+
+body {
+    margin-top: 105px;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+.app-container {
+    padding-left: 0;
+}
+
+.content-container {
+    width: 100%;
+    padding: 15px 0;
+    background-color: $app-bg;
+    border-top: 1px solid $navbar-default-border;
+}
+
+@media(min-width:768px) {
+    .app-container {
+        padding-left: $navbar-side-width;
+    }
+
+    .content-container {
+        padding: 45px 30px;
+    }
+}
+
+// Top Navigation
+.navbar-default {
+    .navbar-nav {
+        &.navbar-top {
+            padding: 0 15px;
+            > li {
+                display: inline-block;
+                float: left;
+            }
+            > .open {
+                > .dropdown-menu {
+                    float: left;
+                    position: absolute;
+                    margin-top: 0;
+                    border: 1px solid rgba(0,0,0,.15);
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    background-color: #fff;
+                    > li {
+                        > a {
+                            white-space: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Side Navigation
+@media(min-width:768px) {
+    .navbar-default {
+        .navbar-nav {
+            &.navbar-side {
+                position: fixed;
+                top: 50px;
+                left: $navbar-side-width;
+                width: $navbar-side-width;
+                margin-left: -180px;
+                border: none;
+                border-radius: 0;
+                overflow-y: auto;
+                background-color: $navbar-side-bg;
+                bottom: 0;
+                overflow-x: hidden;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border-top: 1px solid $navbar-side-border;
+                > li {
+                    > a {
+                        width: $navbar-side-width;
+                        color: $navbar-side-link-color;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                        margin-top: 3px;
+                        margin-bottom: 3px;
+                        border-left: 3px solid transparent;
+                        font-weight: 300;
+                        .fa {
+                            margin-right: 10px;
+                        }
+                        &:hover,
+                        &:focus,
+                        .hover,
+                        .focus {
+                            color: $navbar-side-link-hover-color;
+                        }
+                    }
+                    a {
+                        &:hover,
+                        &.focus, {
+                            outline: none;
+                            background-color: $navbar-side-bg !important;
+                        }
+                    }
+                    > ul {
+                        padding: 0;
+                        > li {
+                            > a {
+                                border-left: 1px solid $navbar-side-border;
+                                display: block;
+                                padding: 2px 10px 2px 25px;
+                                margin-left: 25px;
+                                color: $navbar-side-link-color;
+                                font-size: $font-size-smaller;
+                                text-decoration: none;
+                                &:hover {
+                                    color: $navbar-side-link-hover-color;
+                                }
+                            }
+                        }
+                        > .active {
+                            > a {
+                                color: $navbar-side-link-active-color;
+                                border-color: $navbar-side-border;
+                            }
+                        }
+                    }
+                    &.nav-header {
+                        text-transform: uppercase;
+                        color: #fff;
+                        margin-top: 15px;
+                        padding: 10px 0 0 20px;
+                        font-size: $font-size-small;
+                        font-weight: normal;
+                        letter-spacing: 0.1em;
+                        line-height: $line-height-computed;
+                        display: block;
+                        position: relative;
+                        width: $navbar-side-width;
+                    }
+                    &:first-child {
+                        > a {
+                            margin-bottom: -10px;                            
+                        }
+                    }
+                }
+                > .active > a {
+                    color: $navbar-side-link-active-color;
+                    border-color: $brand-primary;
+                    &:hover,
+                    &:focus,
+                    .hover,
+                    .focus {
+                        color: $navbar-side-link-active-color;
+                        border-color: $brand-primary;
+                    }
+                }
+                > .footer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: $navbar-side-width;
+                    display: block;
+                    padding: 20px 15px;
+                    color: $navbar-side-link-color;
+                    font-size: $font-size-small;
+                    a {
+                        color: $navbar-side-link-color;
+                    }
+                }
+            }
+        }
+    }
+}

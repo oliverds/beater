@@ -13,12 +13,17 @@ require('laravel-elixir-vue');
  |
  */
 
+elixir.config.assetsPath = './Modules/BaseTheme/Assets';
+
 elixir(mix => {
-    mix.sass('front.scss')
-       	.sass('back.scss')
-       	.webpack('front.js')
-       	.version([
-            'css',
-            'js',
-    ]);
+    mix.sass('front/front.scss')
+        .sass('back/back.scss')
+        .webpack('front/front.js')
+        .webpack('back/back.js')
+        // .version([
+        //    'css/front.css',
+        //    'css/back.css',
+        //    'js/front.js',
+        //    'js/back.js',
+    // ]);
 });

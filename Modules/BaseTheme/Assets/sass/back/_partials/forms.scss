@@ -1,0 +1,43 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Normalize non-controls
+//
+// Restyle and baseline non-control form elements.
+
+.form-horizontal, .form-inline{
+  label {
+  	font-weight: 400;
+  	font-size: $font-size-smaller;
+    line-height: $line-height-computed;
+  }
+}
+
+
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls:
+//
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+
+.form-control {
+  @include box-shadow(0 1px 0 0 rgba(0,0,0,.02), 0 0 0 1px rgba(0,0,0,.01));
+}

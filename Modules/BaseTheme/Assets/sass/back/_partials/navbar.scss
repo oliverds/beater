@@ -1,0 +1,75 @@
+//
+// Navbars
+// --------------------------------------------------
+
+// Alternate navbars
+// --------------------------------------------------
+
+// Default navbar
+.navbar-default, .navbar-inverse {
+  margin-bottom: 0;
+  border: none;
+  .navbar-brand {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 30px;
+    width: $navbar-side-width;
+    overflow: hidden;
+    background-color: $navbar-side-bg;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    &:hover {
+      background-color: $navbar-side-bg;
+      color: #fff;
+    }
+  }
+
+  .navbar-text {
+    font-weight: normal;
+  }
+
+  .text-sm {
+    font-size: $font-size-smaller;
+    line-height: $line-height-computed;
+  }
+
+  .text-uppercase {
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .text-bold {
+    font-weight: 500;
+  }
+
+  .navbar-nav {
+    > li > a {
+      font-weight: normal;
+    }
+  }
+
+  .img-profile {
+    margin-top: -6px;
+    margin-bottom: -6px;
+    display: inline-block;
+  }
+
+  .navbar-header {
+    background-color: $navbar-side-bg;
+  }
+
+  .navbar-toggle {
+    color: $navbar-side-link-color;
+    border-color: transparent;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $navbar-side-link-hover-color;
+    }
+  }
+}

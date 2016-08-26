@@ -17,7 +17,11 @@
         @endif
     </title>
 
-    <link rel="stylesheet" href="{{ elixir('css/front.css') }}">
+    @if(! app()->environment('production'))
+        <link rel="stylesheet" href="/css/front.css">
+    @else
+        <link rel="stylesheet" href="{{ elixir('css/front.css') }}">
+    @endif
 
     @include('basetheme::front._layouts._partials.meta')
     @include('basetheme::front._layouts._partials.favicons')
@@ -63,7 +67,11 @@
         </div>
     </footer>
     
-    <script src="{{ elixir('js/front.js') }}"></script>
+    @if(! app()->environment('production'))
+        <script src="/js/front.js"></script>
+    @else
+        <script src="{{ elixir('js/front.js') }}"></script>
+    @endif
 
 </body>
 </html>
