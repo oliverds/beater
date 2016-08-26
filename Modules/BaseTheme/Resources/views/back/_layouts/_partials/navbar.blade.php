@@ -10,7 +10,7 @@
     <!-- Top Menu Items -->
     <ul class="nav navbar-nav hidden-xs">
         <li>
-            <a href="{{ url('/') }}">
+            <a href="{{ url('/') }}" target="_blank">
                 <i class="text-muted fa {{ Request::isSecure() ? 'fa-lock' : 'fa-unlock' }}"></i>
                 {{ Request::getHost() }}
             </a>
@@ -18,7 +18,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-top navbar-right">
         <li class="text-sm hidden-sm hidden-md hidden-lg">
-            <a href="{{ url('/') }}">
+            <a href="{{ url('/') }}" target="_blank">
                 <i class="text-muted fa {{ Request::isSecure() ? 'fa-lock' : 'fa-unlock' }}"></i>
                 <span class="text-bold"> {{ Request::getHost() }}</span>
             </a>
@@ -64,7 +64,7 @@
                 <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
             </li>
             <li class="active">
-                <a href="#" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Users <i class="fa fa-fw fa-angle-down"></i></a>
+                <a href="#" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Users <span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
                 <ul id="users" class="collapse">
                     <li class="active">
                         <a href="#">Users</a>
@@ -76,7 +76,7 @@
             </li>
             <li class="footer">
                 <p class="text-center">
-                    <span class="text-thin">Laravel v. {{ app()->version() }}</span>
+                    <span class="text-thin text-muted">Laravel v. {{ app()->version() }}</span>
                 </p>
                 <div class="text-center">
                     @if (app()->environment() == 'production')

@@ -1,6 +1,6 @@
 @extends('basetheme::back._layouts.master')
 
-@section('title', 'Title')
+@section('title', 'Dashboard')
 @section('metaDescription', 'Meta Description')
 
 @section('content')

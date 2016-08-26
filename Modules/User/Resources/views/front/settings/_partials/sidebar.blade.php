@@ -14,7 +14,7 @@
             <a class="list-group-item" 
                 href="#">
 
-                Profile
+                Password
             </a>
         </div>
     </div>

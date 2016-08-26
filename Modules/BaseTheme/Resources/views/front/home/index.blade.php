@@ -1,6 +1,6 @@
 @extends('basetheme::front._layouts.master')
 
-@section('title', 'Title')
+@section('title', 'Welcome')
 @section('metaDescription', 'Meta Description')
 
 @section('content')
