@@ -8,15 +8,23 @@
         <a class="navbar-brand" href="#"><i class="fa fa-code fa-fw" aria-hidden="true"></i> cp</a>
     </div>
     <!-- Top Menu Items -->
-    <ul class="nav navbar-nav navbar-top navbar-right">
+    <ul class="nav navbar-nav hidden-xs">
         <li>
             <a href="{{ url('/') }}">
                 <i class="text-muted fa {{ Request::isSecure() ? 'fa-lock' : 'fa-unlock' }}"></i>
                 {{ Request::getHost() }}
             </a>
         </li>
-        <li>
-            <a href="#" class="dropdown-toggle text-sm" data-toggle="dropdown" role="button" aria-expanded="false">
+    </ul>
+    <ul class="nav navbar-nav navbar-top navbar-right">
+        <li class="text-sm hidden-sm hidden-md hidden-lg">
+            <a href="{{ url('/') }}">
+                <i class="text-muted fa {{ Request::isSecure() ? 'fa-lock' : 'fa-unlock' }}"></i>
+                <span class="text-bold"> {{ Request::getHost() }}</span>
+            </a>
+        </li>
+        <li class="text-sm">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <img class="img-circle img-profile" src="{{ Gravatar::get(Auth::user()->email, ['size' => 30]) }}"> 
                 <span class="text-bold">{{ Auth::user()->name }}</span>
                 <i class="fa fa-fw fa-angle-down"></i>
