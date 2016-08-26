@@ -1,0 +1,15 @@
+{
+	"name": "oliverds/seeders",
+	"description": "",
+	"authors": [
+		{
+			"name": "Oliver",
+			"email": "oliverds@users.noreply.github.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Modules\\Seeders\\": ""
+		}
+	}
+}
