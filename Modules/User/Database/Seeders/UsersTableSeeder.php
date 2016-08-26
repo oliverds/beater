@@ -30,7 +30,7 @@ class UsersTableSeeder extends UserDatabaseSeeder
             User::create([
                 'name' => $name,
                 'email' => $username . '@open-classifieds.com',
-                //'password' => app()->environment('local') ? strtolower($firstName) : string()->random(),
+                'password' => app()->environment('local') ? strtolower($name) : string()->random(),
                 'username' => $username,
             ]);
         });
@@ -42,7 +42,7 @@ class UsersTableSeeder extends UserDatabaseSeeder
             User::create([
                 'name' => $name,
                 'email' => $username . '+1@open-classifieds.com',
-                //'password' => app()->environment('local') ? strtolower($firstName) : string()->random(),
+                'password' => app()->environment('local') ? strtolower($name) : string()->random(),
                 'username' => $username . '_1',
             ]);
         });

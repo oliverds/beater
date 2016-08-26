@@ -3,7 +3,7 @@
     "alias": "emailauth",
     "description": "",
     "keywords": [],
-    "active": 1,
+    "active": 0,
     "order": 1,
     "providers": [
         "Modules\\EmailAuth\\Providers\\EmailAuthServiceProvider"

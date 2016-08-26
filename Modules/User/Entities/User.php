@@ -31,4 +31,13 @@ class User extends Authenticatable
     {
         return static::where('email', $email)->firstOrFail();
     }
+
+    public function setPasswordAttribute(string $value)
+    {
+        if (is_null($value)) {
+            $this->attributes['password'] = null;
+            return;
+        }
+        $this->attributes['password'] = bcrypt($value);
+    }
 }

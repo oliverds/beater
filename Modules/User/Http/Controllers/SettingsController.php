@@ -5,6 +5,8 @@ namespace Modules\User\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class SettingsController extends Controller
 {
@@ -23,6 +25,13 @@ class SettingsController extends Controller
         $user = Auth::user();
 
         return view('user::front.settings.account.edit', compact('user'));
+    }
+
+    public function editPassword()
+    {
+        $user = Auth::user();
+
+        return view('user::front.settings.password.edit', compact('user'));
     }
 
     public function updateAccount(Request $request)
@@ -44,5 +53,25 @@ class SettingsController extends Controller
         flash('Congrats! You updated your user settings.');
 
         return redirect()->route('settings.account.edit');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $user = Auth::user();
+
+        $this->validate($request, [
+            'old_password' => 'required|old_password:' . $user->password,
+            'password' => 'required|min:6|confirmed',
+        ], [
+            'old_password' => 'The :attribute is incorrect.',
+        ]);
+
+        $user->update([
+            'password' => $request->password,
+        ]);
+
+        flash('Congrats! You updated your password.');
+
+        return redirect()->route('settings.password.edit');
     }
 }

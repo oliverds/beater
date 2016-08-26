@@ -11,8 +11,12 @@
                 Account
             </a>
 
-            <a class="list-group-item" 
-                href="#">
+            <a class="list-group-item {{ Request::is('settings/password*') ? 'active' : '' }}" 
+                href="{{ route('settings.password.update') }}">
+                
+                @if(Request::is('settings/password*'))
+                    <span class="pull-right"> <i class="fa fa-minus fa-rotate-90 text-primary"></i> </span>
+                @endif
 
                 Password
             </a>
