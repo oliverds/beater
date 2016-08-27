@@ -18,3 +18,16 @@
     padding-bottom: 6px;
   }
 }
+
+// Tables in panels
+.panel {
+  > .table,
+  > .table-responsive > .table,
+  > .panel-collapse > .table {
+    > thead > tr > th {
+      text-transform: uppercase;
+      font-size: $font-size-smaller;
+      border-bottom-width: 1px;
+    }
+  }
+}

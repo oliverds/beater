@@ -21,7 +21,7 @@ class UsersTableSeeder extends UserDatabaseSeeder
 		$this->truncate((new User())->getTable());
 
 		$this->seedAdmins();
-        $this->seedSubscriptors();
+        $this->seedMembers();
 	}
 
 	public function seedAdmins()
@@ -36,7 +36,7 @@ class UsersTableSeeder extends UserDatabaseSeeder
         });
     }
 
-    public function seedSubscriptors()
+    public function seedMembers()
     {
         collect($this::USERS)->each(function ($username, $name) {
             User::create([

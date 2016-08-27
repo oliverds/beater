@@ -40,4 +40,9 @@ class User extends Authenticatable
         }
         $this->attributes['password'] = bcrypt($value);
     }
+
+    public function isCurrentUser(): bool
+    {
+        return $this->id === auth()->id();
+    }
 }

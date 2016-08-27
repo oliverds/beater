@@ -63,14 +63,24 @@
             <li>
                 <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
             </li>
-            <li class="active">
-                <a href="#" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Users <span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+            <li class="{{ Request::is(config('app.cp_route') . '/users*') ? 'active' : '' }}">
+                <a href="#" 
+                    data-toggle="collapse" 
+                    data-target="#users">
+                    <i class="fa fa-fw fa-users"></i> Users <span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span>
+                </a>
                 <ul id="users" class="collapse">
                     <li class="active">
-                        <a href="#">Users</a>
+                        <a href="{{ route('cp.users.index') }}">All Users</a>
                     </li>
                     <li>
-                        <a href="#">Roles</a>
+                        <a href="#">Member Users</a>
+                    </li>
+                    <li>
+                        <a href="#">Admin Users</a>
+                    </li>
+                    <li>
+                        <a href="#">User Roles</a>
                     </li>
                 </ul>
             </li>

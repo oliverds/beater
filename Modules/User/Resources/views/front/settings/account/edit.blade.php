@@ -24,6 +24,17 @@
                     		<input name="_method" type="hidden" value="PATCH">
                             {{ csrf_field() }}
 
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <p class="form-control-static">
+                                        <img class="img-circle img-profile" src="{{ Gravatar::get(Auth::user()->email, ['size' => 32]) }}"> 
+                                        You can set this avatar on <a href="https://gravatar.com" target="_blank">gravatar.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <hr>
+
                             <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                                 <label for="username" class="col-md-4 control-label">Username</label>
 
