@@ -12,7 +12,7 @@
         <div class="col-md-8 col-lg-7">
             <div class="panel panel-form">
                 <div class="panel-body">
-                    <form role="form" method="POST" action="{{ route('cp.roles.update', $role->id) }}">
+                    <form role="form" method="POST" action="{{ route('cp.user.role.update', $role->id) }}">
                         <input name="_method" type="hidden" value="PATCH">
                         @include("permission::back.roles._partials.form")
                     </form>

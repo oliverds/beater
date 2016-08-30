@@ -12,7 +12,7 @@
         <div class="col-md-8 col-lg-7">
             <div class="panel panel-form">
                 <div class="panel-body">
-                    <form role="form" method="POST" action="{{ route('cp.users.update', $user->id) }}">
+                    <form role="form" method="POST" action="{{ route('cp.user.update', $user->id) }}">
                         <input name="_method" type="hidden" value="PATCH">
                         @include("user::back.users._partials.form")
                         @if($user->isCurrentUser())

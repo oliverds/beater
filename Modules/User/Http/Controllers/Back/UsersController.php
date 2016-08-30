@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Redirect;
 use Modules\User\Http\Requests\Back\UserRequest;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     public function __construct()
     {
@@ -25,9 +25,9 @@ class UserController extends Controller
         return view('user::back.users.index')->with(compact('users'));
     }
 
-    public function show($id)
+    public function show($user)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($user);
 
         $roles = Role::all();
 
@@ -62,17 +62,17 @@ class UserController extends Controller
 
         flash('User Created.');
 
-        return Redirect::route('cp.users.index');
+        return Redirect::route('cp.users');
     }
 
-    public function edit($id)
+    public function edit($user)
     {
-        return Redirect::route('cp.users.show', $id);
+        return Redirect::route('cp.user', $user);
     }
 
-    public function update(UserRequest $request, $id)
+    public function update(UserRequest $request, $user)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($user);
 
         $values = [
             'username'  => $request->username,
@@ -94,12 +94,12 @@ class UserController extends Controller
 
         flash('User Saved.');
 
-        return Redirect::route('cp.users.index');
+        return Redirect::route('cp.users');
     }
 
-    public function destroy($id)
+    public function delete($user)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($user);
 
         if (auth()->user()->id === $user->id) {
             abort(406);
@@ -109,6 +109,6 @@ class UserController extends Controller
 
         flash('User Deleted.');
 
-        return Redirect::route('cp.users.index');
+        return Redirect::route('cp.users');
     }
 }

@@ -20,6 +20,9 @@ elixir(mix => {
         .sass('back/back.scss')
         .webpack('front/front.js')
         .webpack('back/back.js')
+        .browserSync({
+            proxy: 'beater.dev'
+        });
         // .version([
         //    'css/front.css',
         //    'css/back.css',

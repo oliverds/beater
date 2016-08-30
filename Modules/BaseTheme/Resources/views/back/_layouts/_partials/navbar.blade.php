@@ -31,7 +31,7 @@
             </a>
 
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog fa-fw"></i> Settings</a></li>
+                <li><a href="{{ route('settings') }}"><i class="fa fa-cog fa-fw"></i> Settings</a></li>
             </ul>
         </li>
         <li>
@@ -50,7 +50,7 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-side">
             <li>
-                <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="{{ route('cp.dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li class="nav-header">Content</li>
             <li>
@@ -67,15 +67,18 @@
                 <a href="#" 
                     class="collapse-item collapsed" 
                     data-toggle="collapse" 
-                    data-target="#users">
+                    data-target="#users"
+                    aria-expanded="{{ Request::is(config('app.cp_route') . '/users*') ? 'true' : 'false' }}">
                     <i class="fa fa-fw fa-users"></i> Users
                 </a>
-                <ul id="users" class="collapse">
-                    <li class="active">
-                        <a href="{{ route('cp.users.index') }}">All users</a>
+                <ul id="users" 
+                    class="collapse{{ Request::is(config('app.cp_route') . '/users*') ? ' in' : '' }}"
+                    aria-expanded="{{ Request::is(config('app.cp_route') . '/users*') ? 'true' : 'false' }}">
+                    <li class="{{ Request::is(config('app.cp_route') . '/users') ? 'active' : '' }}">
+                        <a href="{{ route('cp.users') }}">All users</a>
                     </li>
-                    <li>
-                        <a href="{{ route('cp.roles.index') }}">User Roles</a>
+                    <li class="{{ Request::is(config('app.cp_route') . '/users/roles*') ? 'active' : '' }}">
+                        <a href="{{ route('cp.user.roles') }}">User Roles</a>
                     </li>
                 </ul>
             </li>

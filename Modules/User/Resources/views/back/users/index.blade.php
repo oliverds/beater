@@ -11,7 +11,7 @@
             </h1>
         </div>
         <div class="col-xs-6">
-            <a href="{{ route('cp.users.create') }}" class="btn btn-primary btn-uppercase pull-right">
+            <a href="{{ route('cp.user.create') }}" class="btn btn-primary btn-uppercase pull-right">
                 Create User
             </a>
         </div>
@@ -35,7 +35,7 @@
                         <tr data-row-id="{{ $user->id }}">
                             <th scope="row"> {{ $user->id }} </th>
                             <td>
-                                <a href="{{ route('cp.users.edit', $user->id) }}"> {{ $user->name }} </a>
+                                <a href="{{ route('cp.user.edit', $user->id) }}"> {{ $user->name }} </a>
                             </td>
                             <td>
                                 {{ $user->username }}
@@ -53,18 +53,18 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
-                                            <a href="{{ route('cp.users.edit', $user->id) }}">
+                                            <a href="{{ route('cp.user.edit', $user->id) }}">
                                                 <i class="fa fa-fw fa-pencil"></i> Edit
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('cp.users.destroy', $user->id) }}"
+                                            <a href="{{ route('cp.user.delete', $user->id) }}"
                                                 onclick="event.preventDefault();
                                                          document.getElementById('delete-{{ $user->id }}').submit();">
                                                 <i class="fa fa-fw fa-times"></i> Delete
                                             </a>
 
-                                            <form id="delete-{{ $user->id }}" action="{{ route('cp.users.destroy', $user->id) }}" method="POST" style="display: none;">
+                                            <form id="delete-{{ $user->id }}" action="{{ route('cp.user.delete', $user->id) }}" method="POST" style="display: none;">
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 {{ csrf_field() }}
                                             </form>

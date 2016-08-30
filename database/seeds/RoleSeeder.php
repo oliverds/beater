@@ -1,11 +1,9 @@
 <?php
 
-namespace Modules\Permission\Database\Seeders;
-
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
-class RolesTableSeeder extends PermissionDatabaseSeeder
+class RoleSeeder extends DatabaseSeeder
 {
     const ROLES = [
         'admin' => 'access back',

@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="panel panel-form">
                 <div class="panel-body">
-                    <form role="form" method="POST" action="{{ route('cp.roles.store') }}">
+                    <form role="form" method="POST" action="{{ route('cp.user.role.store') }}">
                         @include("permission::back.roles._partials.form")
                     </form>
                 </div>

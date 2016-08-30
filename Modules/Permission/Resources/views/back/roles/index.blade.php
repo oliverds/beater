@@ -11,7 +11,7 @@
             </h1>
         </div>
         <div class="col-xs-6">
-            <a href="{{ route('cp.roles.create') }}" class="btn btn-primary btn-uppercase pull-right">
+            <a href="{{ route('cp.user.role.create') }}" class="btn btn-primary btn-uppercase pull-right">
                 Create Role
             </a>
         </div>
@@ -33,7 +33,7 @@
                         <tr data-row-id="{{ $role->id }}">
                             <th scope="row"> {{ $role->id }} </th>
                             <td>
-                                <a href="{{ route('cp.roles.show', $role->id) }}"> {{ $role->name }} </a>
+                                <a href="{{ route('cp.user.role', $role->id) }}"> {{ $role->name }} </a>
                             </td>
                             <td class="text-right">
                                 <div class="btn-group" role="group">
@@ -45,18 +45,18 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
-                                            <a href="{{ route('cp.roles.edit', $role->id) }}">
+                                            <a href="{{ route('cp.user.role.edit', $role->id) }}">
                                                 <i class="fa fa-fw fa-pencil"></i> Edit
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('cp.roles.destroy', $role->id) }}"
+                                            <a href="{{ route('cp.user.role.delete', $role->id) }}"
                                                 onclick="event.preventDefault();
                                                          document.getElementById('delete-{{ $role->id }}').submit();">
                                                 <i class="fa fa-fw fa-times"></i> Delete
                                             </a>
 
-                                            <form id="delete-{{ $role->id }}" action="{{ route('cp.roles.destroy', $role->id) }}" method="POST" style="display: none;">
+                                            <form id="delete-{{ $role->id }}" action="{{ route('cp.user.role.delete', $role->id) }}" method="POST" style="display: none;">
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 {{ csrf_field() }}
                                             </form>

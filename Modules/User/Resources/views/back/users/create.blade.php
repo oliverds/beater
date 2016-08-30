@@ -12,7 +12,7 @@
         <div class="col-md-8 col-lg-7">
             <div class="panel panel-form">
                 <div class="panel-body">
-                    <form role="form" method="POST" action="{{ route('cp.users.store') }}">
+                    <form role="form" method="POST" action="{{ route('cp.user.store') }}">
                         @include("user::back.users._partials.form")
                         @include("user::back.users._partials.password")
                         <hr>

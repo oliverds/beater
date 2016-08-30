@@ -42,7 +42,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog fa-fw"></i> Settings</a></li>
+                            <li><a href="{{ route('settings') }}"><i class="fa fa-cog fa-fw"></i> Settings</a></li>
                             <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Control Panel</li>
                                 <li><a href="{{ route('cp.dashboard') }}"><i class="fa fa-tachometer fa-fw"></i> Dashboard</a></li>

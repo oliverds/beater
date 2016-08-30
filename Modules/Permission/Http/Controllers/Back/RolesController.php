@@ -8,7 +8,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Redirect;
 use Modules\Permission\Http\Requests\Back\RoleRequest;
 
-class RoleController extends Controller
+class RolesController extends Controller
 {
     public function __construct()
     {
@@ -24,9 +24,9 @@ class RoleController extends Controller
         return view('permission::back.roles.index')->with(compact('roles'));
     }
 
-    public function show($id)
+    public function show($role)
     {
-        $role = Role::findOrFail($id);
+        $role = Role::findOrFail($role);
 
         return view('permission::back.roles.show')->with(compact('role'));
     }
@@ -44,35 +44,35 @@ class RoleController extends Controller
 
         flash('Role Created.');
 
-        return Redirect::route('cp.roles.index');
+        return Redirect::route('cp.roles');
     }
 
-    public function edit($id)
+    public function edit($role)
     {
-        $role = Role::findOrFail($id);
+        $role = Role::findOrFail($role);
 
         return view('permission::back.roles.edit')->with(compact('role'));
     }
 
-    public function update($id, RoleRequest $request)
+    public function update($role, RoleRequest $request)
     {
-        $role = Role::findOrFail($id);
+        $role = Role::findOrFail($role);
 
         $role->update($request->all());
 
         flash('Role Saved.');
 
-        return Redirect::route('cp.roles.index');
+        return Redirect::route('cp.roles');
     }
 
-    public function destroy($id)
+    public function delete($role)
     {
-        $role = Role::findOrFail($id);
+        $role = Role::findOrFail($role);
 
         $role->delete();
 
         flash('Role Deleted.');
 
-        return Redirect::route('cp.roles.index');
+        return Redirect::route('cp.roles');
     }
 }

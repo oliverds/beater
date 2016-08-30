@@ -1,11 +1,9 @@
 <?php
 
-namespace Modules\User\Database\Seeders;
-
 use Modules\User\Entities\User;
 use Spatie\Permission\Models\Role;
 
-class UsersTableSeeder extends UserDatabaseSeeder
+class UserSeeder extends DatabaseSeeder
 {
     const USERS = [
         'Oliver' => 'oliver',
