@@ -5,7 +5,7 @@
             <span class="sr-only">Toggle navigation</span>
             <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="#"><i class="fa fa-code fa-fw" aria-hidden="true"></i> cp</a>
+        <a class="navbar-brand" href="{{ route('cp.dashboard') }}"><i class="fa fa-code fa-fw" aria-hidden="true"></i> cp</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-nav hidden-xs">
@@ -30,7 +30,7 @@
                 <i class="fa fa-fw fa-angle-down"></i>
             </a>
 
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
                 <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog fa-fw"></i> Settings</a></li>
             </ul>
         </li>
@@ -65,22 +65,17 @@
             </li>
             <li class="{{ Request::is(config('app.cp_route') . '/users*') ? 'active' : '' }}">
                 <a href="#" 
+                    class="collapse-item collapsed" 
                     data-toggle="collapse" 
                     data-target="#users">
-                    <i class="fa fa-fw fa-users"></i> Users <span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span>
+                    <i class="fa fa-fw fa-users"></i> Users
                 </a>
                 <ul id="users" class="collapse">
                     <li class="active">
-                        <a href="{{ route('cp.users.index') }}">All Users</a>
+                        <a href="{{ route('cp.users.index') }}">All users</a>
                     </li>
                     <li>
-                        <a href="#">Member Users</a>
-                    </li>
-                    <li>
-                        <a href="#">Admin Users</a>
-                    </li>
-                    <li>
-                        <a href="#">User Roles</a>
+                        <a href="{{ route('cp.roles.index') }}">User Roles</a>
                     </li>
                 </ul>
             </li>

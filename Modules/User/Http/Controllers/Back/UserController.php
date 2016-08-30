@@ -5,11 +5,19 @@ namespace Modules\User\Http\Controllers\Back;
 use Illuminate\Http\Request;
 use Modules\User\Entities\User;
 use Illuminate\Routing\Controller;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Redirect;
 use Modules\User\Http\Requests\Back\UserRequest;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        $this->middleware('role:admin');
+    }
+
     public function index()
     {
         $users = User::all();
@@ -21,12 +29,18 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('user::back.users.edit')->with(compact('user'));
+        $roles = Role::all();
+
+        return view('user::back.users.edit')->with(compact('user', 'roles'));
     }
 
     public function create()
     {
-        return view('user::back.users.create', ['user' => new User()]);
+        $user = new User();
+
+        $roles = Role::all();
+
+        return view('user::back.users.create')->with(compact('user', 'roles'));
     }
 
     public function store(UserRequest $request)
@@ -40,7 +54,13 @@ class UserController extends Controller
 
         $user->save();
 
-        flash('User Saved.');
+        if (is_null($request->roles)) {
+            $request->roles = array();
+        }
+
+        $user->syncRoles($request->roles);
+
+        flash('User Created.');
 
         return Redirect::route('cp.users.index');
     }
@@ -58,7 +78,6 @@ class UserController extends Controller
             'username'  => $request->username,
             'email' => $request->email,
             'name'  => $request->name,
-            'password'  => $request->password,
         ];
 
         if ($request->has('password')) {
@@ -67,7 +86,13 @@ class UserController extends Controller
 
         $user->update($values);
 
-        flash('User Created.');
+        if (is_null($request->roles)) {
+            $request->roles = array();
+        }
+
+        $user->syncRoles($request->roles);
+
+        flash('User Saved.');
 
         return Redirect::route('cp.users.index');
     }

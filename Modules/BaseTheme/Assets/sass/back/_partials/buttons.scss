@@ -20,3 +20,30 @@
 .btn-primary-outline {
   @include button-outline-variant($btn-primary-border, transparent);
 }
+
+.btn-link {
+	&.btn-more {
+		color: $gray-dark;
+		// @include transition(all 200ms ease);
+		&:active {
+			// @include transition(all 200ms ease);
+		}
+	}
+}
+
+.table {
+	.btn-group {
+		margin-top: -6px;
+		margin-bottom: -6px;
+	}
+}
+
+.btn-group .dropdown-toggle.btn-more {
+    @include transition(all 200ms ease);
+}
+
+.btn-group.open .dropdown-toggle.btn-more {
+    box-shadow: none;
+    @include rotate(90deg);
+    @include transition(all 200ms ease);
+}

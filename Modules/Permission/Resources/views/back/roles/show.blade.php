@@ -1,24 +1,15 @@
 @extends('basetheme::back._layouts.master')
 
-@section('title', 'Users')
+@section('title', 'Roles')
 
 @section('content')
 
-    <div class="row">
-        <div class="col-xs-6">
-            <h1 class="page-header">
-                <span class="text-thinner">Users</span>
-            </h1>
-        </div>
-        <div class="col-xs-6">
-            <a href="{{ route('cp.users.create') }}" class="btn btn-primary btn-uppercase pull-right">
-                Create User
-            </a>
-        </div>
-    </div>
+    <h1 class="page-header">
+        <span class="text-thinner">{{ $role->name }}</span>
+    </h1>
 
     <div class="panel panel-table">
-        @if (count($users) > 0)
+        @if (count($role->users) > 0)
             <table class="table" data-datatable data-order='[[ 0, "asc" ]]'>
                 <thead>
                     <tr>
@@ -31,7 +22,7 @@
                 </thead>
                 
                 <tbody>
-                    @foreach($users as $user)
+                    @foreach($role->users as $user)
                         <tr data-row-id="{{ $user->id }}">
                             <th scope="row"> {{ $user->id }} </th>
                             <td>

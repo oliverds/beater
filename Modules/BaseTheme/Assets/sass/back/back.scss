@@ -14,6 +14,7 @@
 
 // Partials
 @import "_partials/buttons";
+@import "_partials/dropdowns";
 @import "_partials/forms";
 @import "_partials/list-group";
 @import "_partials/navbar";
@@ -65,9 +66,7 @@ body {
                     float: left;
                     position: absolute;
                     margin-top: 0;
-                    border: 1px solid rgba(0,0,0,.15);
-                    border-top-left-radius: 0;
-                    border-top-right-radius: 0;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
                     background-color: #fff;
                     > li {
                         > a {
@@ -114,9 +113,18 @@ body {
                         }
                         &:hover,
                         &:focus,
-                        .hover,
-                        .focus {
+                        &.hover,
+                        &.focus {
                             color: $navbar-side-link-hover-color;
+                        }
+                        &.collapse-item:after {
+                            font-family: 'FontAwesome';
+                            content: "\f106";
+                            float: right;
+                            @include transition(all 200ms linear);
+                        }
+                        &.collapse-item.collapsed:after {
+                            @include rotate(-180deg);
                         }
                     }
                     a {

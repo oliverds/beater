@@ -9,7 +9,7 @@ Route::group(['middleware' => 'web', 'namespace' => 'Modules\User\Http\Controlle
 });
 
 Route::group([
-    'middleware' => ['web', 'auth'],
+    'middleware' => ['web'],
     'namespace' => 'Modules\User\Http\Controllers\Back',
     'prefix' => config('app.cp_route'),
 ], function () {

@@ -84,6 +84,7 @@ $table-cell-padding: 11px;
 $table-border-color: rgba(0, 0, 0, 0.05);
 
 // Dropdowns
-$dropdown-link-color: $gray-darker;
-$dropdown-link-hover-color: #fff;
-$dropdown-link-hover-bg: $brand-primary;
+$dropdown-border: rgba(0, 0, 0, 0.05);
+$dropdown-link-color: $gray;
+$dropdown-link-hover-color: $brand-primary;
+$dropdown-link-hover-bg: #fff;

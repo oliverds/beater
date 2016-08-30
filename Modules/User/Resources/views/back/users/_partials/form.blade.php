@@ -17,6 +17,29 @@
     @endif
 </div>
 
+<div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
+    <label for="roles" class="control-label">Roles</label>
+
+    @foreach ($roles as $role)
+        <div class="checkbox">
+            <label>
+                <input id="role-{{ $role->name }}"
+                    type="checkbox" 
+                    name="roles[]" 
+                    value="{{ $role->name }}" 
+                    {{ $user->hasRole($role->name) ? 'checked' : '' }}>
+                    {{ $role->name }}
+            </label>
+        </div>
+    @endforeach
+
+    @if ($errors->has('roles'))
+        <span class="help-block">
+            <strong>{{ $errors->first('roles') }}</strong>
+        </span>
+    @endif
+</div>
+
 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
     <label for="email" class="control-label">E-Mail Address</label>
 

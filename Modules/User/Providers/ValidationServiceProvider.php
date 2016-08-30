@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Validator;
 
 class ValidationServiceProvider extends ServiceProvider
 {
-	protected $defer = false;
+    protected $defer = false;
 
-	public function boot()
-	{
-		Validator::extend('old_password', function ($attribute, $value, $parameters) {
+    public function boot()
+    {
+        Validator::extend('old_password', function ($attribute, $value, $parameters) {
             return Hash::check($value, current($parameters));
         });
-	}
+    }
 }

@@ -9,13 +9,14 @@ use Illuminate\Database\Seeder;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use Schema;
+
 // use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        if ( ! app()->environment('local', 'testing')) {
+        if (! app()->environment('local', 'testing')) {
             throw new \Exception('Sorry, no full seeds on production!');
         }
 
@@ -106,7 +107,6 @@ class DatabaseSeeder extends Seeder
 
         collect(range($min, mt_rand($min, $max)))
             ->each(function () use ($files, $model, $sourceDirectory, $collectionName) {
-
                 $file = $files->random()['path'];
 
                 $model

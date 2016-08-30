@@ -10,5 +10,6 @@ Route::group(['middleware' => 'web', 'namespace' => 'Modules\EmailAuth\Http\Cont
     Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'RegisterController@register')->name('register.post');
 
-    Route::get('auth/token/{token}', 'LoginController@authenticate')->name('login.token');;
+    Route::get('auth/token/{token}', 'LoginController@authenticate')->name('login.token');
+    ;
 });

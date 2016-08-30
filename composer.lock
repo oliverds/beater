@@ -395,16 +395,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.3",
+            "version": "v5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4dbb8bc3897068c392d405bad078f22611f0d95c"
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4dbb8bc3897068c392d405bad078f22611f0d95c",
-                "reference": "4dbb8bc3897068c392d405bad078f22611f0d95c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
                 "shasum": ""
             },
             "require": {
@@ -518,20 +518,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-26 11:47:28"
+            "time": "2016-08-26 21:40:26"
         },
         {
             "name": "laravelcollective/html",
-            "version": "dev-master",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "c4c87916c34e04aa9d4e860315ab1858304d786a"
+                "reference": "961ce141c16c6b085128f209496c26efd3e681ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c4c87916c34e04aa9d4e860315ab1858304d786a",
-                "reference": "c4c87916c34e04aa9d4e860315ab1858304d786a",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/961ce141c16c6b085128f209496c26efd3e681ca",
+                "reference": "961ce141c16c6b085128f209496c26efd3e681ca",
                 "shasum": ""
             },
             "require": {
@@ -548,11 +548,6 @@
                 "phpunit/phpunit": "~5.4"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.3-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Collective\\Html\\": "src/"
@@ -577,7 +572,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
-            "time": "2016-08-04 03:49:50"
+            "time": "2016-08-27 23:52:43"
         },
         {
             "name": "league/flysystem",
@@ -884,21 +879,21 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "0.11.1",
+            "version": "0.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "621a30a18d2e0cd1bbc3c74013e5b2daad92be23"
+                "reference": "97b0c3ca83232142762d48ccfdd255de9fdd3418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/621a30a18d2e0cd1bbc3c74013e5b2daad92be23",
-                "reference": "621a30a18d2e0cd1bbc3c74013e5b2daad92be23",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/97b0c3ca83232142762d48ccfdd255de9fdd3418",
+                "reference": "97b0c3ca83232142762d48ccfdd255de9fdd3418",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.1.*|5.2.*|5.3.*",
-                "laravelcollective/html": "5.1.*|5.2.*|5.3.x@dev",
+                "laravelcollective/html": "5.1.*|5.2.*|5.3.*",
                 "php": ">=5.5"
             },
             "require-dev": {
@@ -934,7 +929,7 @@
                 "nwidart",
                 "rad"
             ],
-            "time": "2016-08-25 12:17:31"
+            "time": "2016-08-29 18:01:54"
         },
         {
             "name": "paragonie/random_compat",

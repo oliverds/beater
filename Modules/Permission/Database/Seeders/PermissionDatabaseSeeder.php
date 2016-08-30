@@ -2,8 +2,8 @@
 
 namespace Modules\Permission\Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
+use Modules\Seeders\Entities\DatabaseSeeder as Seeder;
 
 class PermissionDatabaseSeeder extends Seeder
 {
@@ -14,8 +14,10 @@ class PermissionDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
+        parent::run();
 
-        // $this->call("OthersTableSeeder");
+        Cache::flush();
+
+        $this->call(RolesTableSeeder::class);
     }
 }

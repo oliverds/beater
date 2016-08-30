@@ -4,7 +4,7 @@
     "description": "",
     "keywords": [],
     "active": 0,
-    "order": 1,
+    "order": 2,
     "providers": [
         "Modules\\EmailAuth\\Providers\\EmailAuthServiceProvider"
     ],

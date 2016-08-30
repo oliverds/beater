@@ -1,0 +1,58 @@
+.dropdown-menu {
+    min-width: 120px;
+    @include box-shadow(0 1px 0 0 rgba(0,0,0,.05), 0 0 0 1px rgba(0,0,0,.04));
+    > li > a {
+        padding: 5px 20px;
+        color: $gray;
+        font-size: $font-size-smaller;
+        > .fa {
+            margin-right: 4px;
+        }
+    }
+    @media screen and (min-width: $screen-sm-min) {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        @include scale(0.8);
+        @include transition(all .15s ease)
+        @include transform-origin(50% 90%)
+        @include animation-fill-mode(forwards);
+        &:after {
+            position: absolute;
+            top: -5px;
+            left: 12%;
+            display: inline-block;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #fff;
+            border-left: 5px solid transparent;
+            content:'';
+        }
+        &:before {
+            position: absolute;
+            top: -8px;
+            left: 12%;
+            display: inline-block;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(0, 0, 0, 0.05);
+            border-left: 8px solid transparent;
+            content:'';
+            margin-left: -3px;
+        }
+        &.dropdown-menu-right:after,
+        &.dropdown-menu-right:before {
+            right: 12%;
+            left: auto;
+        }
+        &.dropdown-menu-right:before {
+            margin-left: 0;
+            margin-right: -3px;
+        }
+    }
+}
+
+.open .dropdown-menu {
+    z-index: 9999;
+    opacity: 1;
+    pointer-events: auto;
+    @include scale(1);
+}

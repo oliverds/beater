@@ -4,8 +4,8 @@ Route::group(['middleware' => 'web', 'prefix' => 'home', 'namespace' => 'Modules
     Route::get('/', 'BaseThemeController@index');
 });
 
-Route::group(['middleware' => ['web', 'auth'], 'prefix' => config('app.cp_route'), 'namespace' => 'Modules\BaseTheme\Http\Controllers'], function () {
-    Route::get('/', function() {
-    	return view('basetheme::back.dashboard.index');
+Route::group(['middleware' => ['web', 'auth', 'role:admin,access back'], 'prefix' => config('app.cp_route'), 'namespace' => 'Modules\BaseTheme\Http\Controllers'], function () {
+    Route::get('/', function () {
+        return view('basetheme::back.dashboard.index');
     })->name('cp.dashboard');
 });
