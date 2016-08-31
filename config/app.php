@@ -181,6 +181,7 @@ return [
          */
 
         Nwidart\Modules\LaravelModulesServiceProvider::class,
+        Spatie\Translatable\TranslatableServiceProvider::class,
 
         /*
          * Application Service Providers...

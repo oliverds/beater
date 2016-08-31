@@ -5,11 +5,6 @@ use Spatie\Permission\Models\Permission;
 
 class RoleSeeder extends DatabaseSeeder
 {
-    const ROLES = [
-        'admin' => 'access back',
-        'member' => 'access front'
-    ];
-
     /**
      * Run the database seeds.
      *
@@ -17,21 +12,26 @@ class RoleSeeder extends DatabaseSeeder
      */
     public function run()
     {
-        $this->truncate((new Role())->getTable());
+        $this->truncate(config('laravel-permission.table_names.roles'));
+        $this->truncate(config('laravel-permission.table_names.user_has_roles'));
+        $this->truncate(config('laravel-permission.table_names.role_has_permissions'));
 
         $this->seedRoles();
     }
 
     public function seedRoles()
     {
-        collect($this::ROLES)->each(function ($permission, $role) {
-            $role = Role::create([
-                'name' => $role,
-            ]);
+        $roles = [
+            'admin',
+            'user',
+        ];
 
-            Permission::create(['name' => $permission]);
+        collect($roles)->each(function ($role) {
+            $role = Role::create(['name' => $role]);
 
-            $role->givePermissionTo($permission);
+            if ($role->name == 'admin') {
+                $role->givePermissionTo('super');
+            }
         });
     }
 }

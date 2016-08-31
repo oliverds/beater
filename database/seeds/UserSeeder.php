@@ -5,11 +5,6 @@ use Spatie\Permission\Models\Role;
 
 class UserSeeder extends DatabaseSeeder
 {
-    const USERS = [
-        'Oliver' => 'oliver',
-        'Chema' => 'chema',
-    ];
-
     /**
      * Run the database seeds.
      *
@@ -25,7 +20,13 @@ class UserSeeder extends DatabaseSeeder
 
     public function seedAdmins()
     {
-        collect($this::USERS)->each(function ($username, $name) {
+        $users = [
+            'Oliver' => 'oliver',
+            'Chema' => 'chema',
+            'Constantinos' => 'constantinos',
+        ];
+
+        collect($users)->each(function ($username, $name) {
             $user = User::create([
                 'name' => $name,
                 'email' => $username . '@open-classifieds.com',
@@ -38,14 +39,18 @@ class UserSeeder extends DatabaseSeeder
 
     public function seedMembers()
     {
-        collect($this::USERS)->each(function ($username, $name) {
+        $users = [
+            'User' => 'user',
+        ];
+
+        collect($users)->each(function ($username, $name) {
             $user = User::create([
                 'name' => $name,
-                'email' => $username . '+1@open-classifieds.com',
+                'email' => $username . '@user.com',
                 'password' => app()->environment('local') ? strtolower($name) : string()->random(),
-                'username' => $username . '_1',
+                'username' => $username,
             ]);
-            $user->assignRole('member');
+            $user->assignRole('user');
         });
     }
 }
