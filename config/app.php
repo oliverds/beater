@@ -182,6 +182,7 @@ return [
 
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Spatie\Translatable\TranslatableServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -3,9 +3,10 @@
 namespace Modules\Permission\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Modules\Permission\Entities\Role;
 use Illuminate\Support\Facades\Redirect;
+use Modules\Permission\Entities\Permission;
 use Modules\Permission\Http\Requests\Back\RoleRequest;
 
 class RolesController extends Controller
@@ -17,7 +18,7 @@ class RolesController extends Controller
 
     public function index()
     {
-        $this->authorize(request()->route()->getName());
+        $this->authorize('cp.user.roles');
 
         $roles = Role::all();
 
@@ -26,7 +27,7 @@ class RolesController extends Controller
 
     public function show($role)
     {
-        $this->authorize(request()->route()->getName());
+        $this->authorize('cp.user.role');
 
         $role = Role::findOrFail($role);
 
@@ -35,49 +36,67 @@ class RolesController extends Controller
 
     public function create()
     {
-        $this->authorize(request()->route()->getName());
+        $this->authorize('cp.user.role.create');
 
-        return view('permission::back.roles.create', ['role' => new Role()]);
+        $role = new Role();
+
+        $permissions = Permission::all();
+
+        return view('permission::back.roles.create')->with(compact('role', 'permissions'));
     }
 
     public function store(RoleRequest $request)
     {
-        $this->authorize(request()->route()->getName());
+        $this->authorize('cp.user.role.create');
 
-        $role = Role::create($request->all());
+        $role = Role::create(['name' => $request->name]);
 
         $role->save();
 
+        if (is_null($request->permissions)) {
+            $request->permissions = array();
+        }
+
+        $role->givePermissionTo($request->permissions);
+
         flash('Role Created.');
 
-        return Redirect::route('cp.roles');
+        return Redirect::route('cp.user.roles');
     }
 
     public function edit($role)
     {
-        $this->authorize(request()->route()->getName());
+        $this->authorize('cp.user.role.update');
 
         $role = Role::findOrFail($role);
 
-        return view('permission::back.roles.edit')->with(compact('role'));
+        $permissions = Permission::all();
+
+        return view('permission::back.roles.edit')->with(compact('role', 'permissions'));
     }
 
     public function update($role, RoleRequest $request)
     {
-        $this->authorize(request()->route()->getName());
+        $this->authorize('cp.user.role.update');
 
         $role = Role::findOrFail($role);
 
-        $role->update($request->all());
+        $role->update(['name' => $request->name]);
+
+        if (is_null($request->permissions)) {
+            $request->permissions = array();
+        }
+
+        $role->syncPermissionTo($request->permissions);
 
         flash('Role Saved.');
 
-        return Redirect::route('cp.roles');
+        return Redirect::route('cp.user.roles');
     }
 
     public function delete($role)
     {
-        $this->authorize(request()->route()->getName());
+        $this->authorize('cp.user.role.delete');
 
         $role = Role::findOrFail($role);
 
@@ -85,6 +104,6 @@ class RolesController extends Controller
 
         flash('Role Deleted.');
 
-        return Redirect::route('cp.roles');
+        return Redirect::route('cp.user.roles');
     }
 }

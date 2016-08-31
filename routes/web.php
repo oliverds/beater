@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('basetheme::front.home.index');
+    return view('front.home.index');
+});
+
+Route::group(['middleware' => ['auth'], 'prefix' => config('app.cp_route'), 'namespace' => 'Back'], function () {
+    Route::get('/', function () {
+        return redirect()->route('cp.dashboard');
+    })->name('cp');
+
+    Route::get('dashboard', 'DashboardController@index')->name('cp.dashboard');
+
+    Route::get('settings', function () {
+	    return view('back.settings.index');
+	})->name('cp.settings');
 });

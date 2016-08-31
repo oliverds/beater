@@ -1,5 +1,5 @@
 {
-	"name": "oliverds/page",
+	"name": "oliverds/activitylog",
 	"description": "",
 	"authors": [
 		{
@@ -9,7 +9,10 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Modules\\Page\\": ""
+			"Modules\\ActivityLog\\": ""
 		}
+	},
+	"require": {
+		"spatie/laravel-activitylog": "^1.7.1"
 	}
 }

@@ -52,16 +52,13 @@
             <li>
                 <a href="{{ route('cp.dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
-            <li class="nav-header">Content</li>
+            <li class="nav-header">Tools</li>
             <li>
-                <a href="#"><i class="fa fa-fw fa-sitemap"></i> Pages</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-folder"></i> Assets</a>
+                <a href="{{ route('cp.activitylog') }}"><i class="fa fa-fw fa-file-archive-o"></i> Activity Log</a>
             </li>
             <li class="nav-header">Configure</li>
             <li>
-                <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                <a href="{{ route('cp.settings') }}"><i class="fa fa-fw fa-cog"></i> Settings</a>
             </li>
             <li class="{{ Request::is(config('app.cp_route') . '/users*') ? 'active' : '' }}">
                 <a href="#" 

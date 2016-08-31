@@ -1,7 +1,6 @@
 <?php
 
 use Modules\User\Entities\User;
-use Spatie\Permission\Models\Role;
 
 class UserSeeder extends DatabaseSeeder
 {

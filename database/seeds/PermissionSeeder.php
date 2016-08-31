@@ -1,7 +1,6 @@
 <?php
 
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
+use Modules\Permission\Entities\Permission;
 
 class PermissionSeeder extends DatabaseSeeder
 {
@@ -23,23 +22,26 @@ class PermissionSeeder extends DatabaseSeeder
         $permissions = [
             'super',
 
+            // Control Panel
+            'cp',
+            'cp.dashboard',
+
             // Users
             'cp.users',
             'cp.user.create',
-            'cp.user.store',
             'cp.user',
-            'cp.user.edit',
             'cp.user.update',
             'cp.user.delete',
 
             // User Roles
             'cp.user.roles',
             'cp.user.role.create',
-            'cp.user.role.store',
             'cp.user.role',
-            'cp.user.role.edit',
             'cp.user.role.update',
             'cp.user.role.delete',
+
+            // Activity
+            'cp.activitylog',
         ];
 
         collect($permissions)->each(function ($permission) {

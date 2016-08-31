@@ -5,7 +5,7 @@ namespace Modules\User\Http\Controllers\Back;
 use Illuminate\Http\Request;
 use Modules\User\Entities\User;
 use Illuminate\Routing\Controller;
-use Spatie\Permission\Models\Role;
+use Modules\Permission\Entities\Role;
 use Illuminate\Support\Facades\Redirect;
 use Modules\User\Http\Requests\Back\UserRequest;
 

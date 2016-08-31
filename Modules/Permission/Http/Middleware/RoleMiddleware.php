@@ -8,17 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class RoleMiddleware
 {
-    public function handle(Request $request, Closure $next, $role, $permission = null)
+    public function handle(Request $request, Closure $next, $role)
     {
         if (Auth::guest()) {
-            return redirect($urlOfYourLoginPage);
+            return redirect(route('login'));
         }
 
         if (! $request->user()->hasRole($role)) {
-            abort(403);
-        }
-
-        if ($permission !== null  && ! $request->user()->can($permission)) {
             abort(403);
         }
 

@@ -24,7 +24,7 @@ return [
         |
         */
 
-        'permission' => Spatie\Permission\Models\Permission::class,
+        'permission' => Modules\Permission\Entities\Permission::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return [
         |
         */
 
-        'role' => Spatie\Permission\Models\Role::class,
+        'role' => Modules\Permission\Entities\Role::class,
 
     ],
 

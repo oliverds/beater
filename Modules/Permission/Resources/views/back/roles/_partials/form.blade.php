@@ -16,6 +16,29 @@
     @endif
 </div>
 
+<div class="form-group{{ $errors->has('permissions') ? ' has-error' : '' }}">
+    <label for="permissions" class="control-label">Permissions</label>
+
+    @foreach ($permissions as $permission)
+        <div class="checkbox">
+            <label>
+                <input id="permission-{{ $permission->name }}"
+                    type="checkbox" 
+                    name="permissions[]" 
+                    value="{{ $permission->name }}" 
+                    {{ $role->hasPermissionTo($permission->name) ? 'checked' : '' }}>
+                    {{ $permission->name }}
+            </label>
+        </div>
+    @endforeach
+
+    @if ($errors->has('permissions'))
+        <span class="help-block">
+            <strong>{{ $errors->first('permissions') }}</strong>
+        </span>
+    @endif
+</div>
+
 <hr>
 
 <div class="form-group">

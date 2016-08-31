@@ -1,0 +1,16 @@
+{
+    "name": "ActivityLog",
+    "alias": "activitylog",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\ActivityLog\\Providers\\ActivityLogServiceProvider",
+        "Spatie\\Activitylog\\ActivitylogServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}
