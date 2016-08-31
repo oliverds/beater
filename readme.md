@@ -2,6 +2,8 @@
 
 The Modular Laravel template to start projects.
 
+Uses [nwidart/laravel-modules](https://github.com/nWidart/laravel-modules) package to manage this laravel app by using modules. 
+
 ## Install
 
 Clone this repository
