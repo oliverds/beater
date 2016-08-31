@@ -36,7 +36,7 @@ Run the migrations
 php artisan module:migrate
 ```
 
-[Set the admin users](https://github.com/oliverds/beater/blob/master/database/seeds/UserSeeder.php#L20)
+[Set the admin users seeders](https://github.com/oliverds/beater/blob/master/database/seeds/UserSeeder.php#L20)
 
 Run the seeds
 
